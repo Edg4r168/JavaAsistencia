@@ -29,7 +29,7 @@ public class GrupoController {
                         @RequestParam("size") Optional<Integer> size
     ) {
         int currentPage = page.orElse(1) - 1;
-        int pageSize = size.orElse(10);
+        int pageSize = size.orElse(4);
 
         Pageable pageable = PageRequest.of(currentPage, pageSize);
         Page<Grupo> grupos = _grupoService.searchPaginated(pageable);
